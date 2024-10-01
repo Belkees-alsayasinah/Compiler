@@ -1,0 +1,83 @@
+String Title = Get.arguments["Title"];
+String Price = Get.arguments["Price"];
+String imageUrl = Get.arguments["imageUrl"];
+String Description = Get.arguments["Description"];
+class Screen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+    body: Form(
+      child:Row(
+      children:[
+      Column(
+                  children:[
+                     Text("Title:",
+                     style: TextStyle(
+                     fontSize: 25,
+                     ),
+                     ),
+                     TextField(
+                        controller: Title,
+                        hintText: "Title",
+                      ),
+                      Container(
+                      height:20,),
+                      Text("Price:",
+                                     style: TextStyle(
+                                     fontSize: 25,
+                                     ),
+                                     ),
+                                     TextField(
+                                        controller: Price,
+                                        hintText: "Price",
+                                      ),
+                                      Container(
+                                      height:20,),
+                      Text("imageUrl:",
+                                     style: TextStyle(
+                                     fontSize: 25,
+                                     ),
+                                     ),
+                                     TextField(
+                                        controller: imageUrl,
+                                        hintText: "imageUrl",
+                                      ),
+                                      Container(
+                                      height:20,),
+                      Text("Description:",
+                                     style: TextStyle(
+                                     fontSize: 25,
+                                     ),
+                                     ),
+                                     TextField(
+                                        controller: Description,
+                                        hintText: "Description",
+                                      ),
+                                      Container(
+                                      height:20,),
+
+                      ElevatedButton(
+                                          child: Text("Done"),
+                                          onPressed: (){
+                                          setState((){
+                                          Get.to("page_2.php",arguments:{
+                                                                                  "Title":Title,
+                                                                                  "Price":Price,
+                                                                                  "imageUrl":imageUrl,
+                                                                                  "Description": Description
+                                                         });
+                                          });
+                                          }
+                                          ),
+                    ],
+                    ),
+      Image.assets("Tests/images/3.jpg", width:600,height:300),
+      ],
+      ),
+    ),
+    );
+
+
+
+    }
+    }

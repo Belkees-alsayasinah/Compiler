@@ -1,0 +1,100 @@
+String Title = "";
+String Price = "";
+String imageUrl = "";
+String Description = "";
+int number2 = 0;
+int size = 30;
+String value = "";
+class Screen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Form(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text("Add Products",
+                style: TextStyle(
+                fontSize : size,
+                color : Colors.purple,
+                ),
+                ),
+               Container(
+               height:40,
+               ),
+                TextField(
+                  controller: Title,
+                  hintText: "Title",
+                ),
+Container(
+               height:40,
+               ),
+                TextField(
+                  controller: Price,
+                  hintText: "Price",
+                ),
+                Container(
+                               height:40,
+                               ),
+                TextField(
+                  controller: imageUrl,
+                  hintText: "imageUrl",
+                ),
+                Container(
+                               height:40,
+                               ),
+                TextField(
+                  controller: Description,
+                  hintText: "Description",
+                ),
+                Container(
+                               height:40,
+                               ),
+                ElevatedButton(
+                  color: Colors.purple,
+                  child: Text("add item",
+                  style: TextStyle(
+                                  fontSize : 15,
+                                  color : Colors.white,
+                                  ),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      Get.to("page_2.php",arguments:
+                      {
+                      "Title":Title,
+                      "Price":Price,
+                      "imageUrl":imageUrl,
+                      "Description": Description
+                      }
+                      );
+                    });
+                  },
+                ),
+
+                ElevatedButton(
+                                  color: Colors.purple,
+                                  child: Text("add item 2",
+                                  style: TextStyle(
+                                                  fontSize : 15,
+                                                  color : Colors.white,
+                                                  ),
+                                  ),
+                                  onPressed: () {
+
+                                  },
+                                ),
+              ],
+            ),
+          ),
+          Image.assets("Tests/images/3.jpg", width:600,height:300),
+        ],
+      ),
+    );
+  }
+}

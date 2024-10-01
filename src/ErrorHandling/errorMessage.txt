@@ -1,0 +1,17 @@
+
+TypeMisMatchException in line: 5, variable: y has type: Boolean.
+possible solution : Assign type Integer
+
+UndefinedException in line: 8,
+this variable :n.
+is  undefined, try again by definition the variable first... 
+
+
+in line : 9 , you have divided by zero, Try another number 
+
+
+Rewrite child for the Container in line : 19
+please delete the child that you don't use it
+
+
+in line : 23 , required property miss 

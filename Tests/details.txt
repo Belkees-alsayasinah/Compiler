@@ -1,0 +1,114 @@
+String Title = Get.arguments["Title"];
+String Price = Get.arguments["Price"];
+String imageUrl = Get.arguments["imageUrl"];
+String Description = Get.arguments["Description"];
+int x =300;
+class Screen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+    body: Column(
+         children:[
+            Row(
+            mainAxisAlignment:MainAxisAlignment.spaceAround,
+         //   crossAxisAlignment: CrossAxisAlignment.center,
+             children:[
+
+            Column(
+            children:[
+                    Text(Title,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 40,
+                    ),
+                    ),
+                    Text(Price,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 30,
+                    ),
+                    ),
+            ],
+            ),
+             Container(
+             color: Colors.purple,
+             width:x,
+             height:x,
+             child: Image.assets(imageUrl, width:600,height:400),
+             ),
+    ],
+    ),
+
+    Row(
+       mainAxisAlignment:MainAxisAlignment.spaceBetween,
+        children:[
+         Container(
+            width:200,
+
+            ),
+         Column(
+             children:[
+             Text("Description",
+                 style: TextStyle(
+                     color: Colors.black,
+                     fontSize: 50,
+                 ),
+                 ),
+                 Text(Description,
+                         style: TextStyle(
+                             color: Colors.black,
+                             fontSize: 20,
+                         ),
+                         ),
+             ],
+             ),
+        ],
+    ),
+   Form(
+    child: Row(
+   mainAxisAlignment: MainAxisAlignment.center,
+   children:[
+                  ElevatedButton(
+                                                                      color: Colors.purple,
+                                                                      child: Text("Edit Information",
+                                                                      style: TextStyle(
+                                                                                      fontSize : 15,
+                                                                                      color : Colors.white,
+                                                                                      ),
+                                                                      ),
+                                                                      onPressed: () {
+                                                                       setState((){
+                                                                       x+=10
+                                                                       });
+                                                                      },
+                                                                    ),
+                                          Container(width:20,),
+                                          ElevatedButton(
+                                                     color: Colors.purple,
+                                                     child: Text("Edit Information",
+                                                     style: TextStyle(
+                                                                     fontSize : 15,
+                                                                     color : Colors.white,
+                                                                     ),
+                                                     ),
+                                                     onPressed: () {
+                                                       setState(() {
+                                                         Get.to("page_3.php",arguments:{
+                                                         "Title":Title,
+                                                         "Price":Price,
+                                                         "imageUrl":imageUrl,
+                                                         "Description": Description
+                                                         }
+                                                         );
+                                                       });
+                                                     },
+                                                   ),
+
+    ],
+   ),
+),
+],
+),
+);
+}
+}
